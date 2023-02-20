@@ -18,11 +18,16 @@ body {
 	border:1px solid #666;
 	background-color: #FFC; 
 	
+	/* 요소의 최대, 최소 너비를 제한하는데 사용된다. */
 	max-width: 980px;
 	min-width: 700px;
 	
 	height: 500px;
 	max-height: 150px;
+	/* overflow-y: 세로 방향 스크롤바를 표시할지 여부를 결정한다. */
+	/* 						auto: 컨텐츠가 요소의 크기를 벗어나면, 스크롤바가 자동으로 추가됨 */
+	/*  						hidden: 컨텐츠가 요소의 크기를 벗어나면, 요소 내부에서 잘려서 보이지 않음*/
+	/*						scroll: 스크롤바가 항상 표시됨*/
 	overflow-y: auto;
 	overflow-y: hidden;
 	overflow-y: scroll;
