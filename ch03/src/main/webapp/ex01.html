@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;
+}
+
+.box1 {
+	border: 1px solid #666;
+	width: 300px;
+	background-color: #FFC;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 40px;
+	
+	padding: 10px 20px 30px 40px; /*Top, Right, Bottom, Left*/
+	padding: 10px 20px 30px; /*Top, (Right, Bottom), Left*/
+	padding: 10px 20px; /*(Top, Bottom), (Right, Left)*/
+	padding: 10px; /*(Top, Bottom, Right, Left)*/
+	
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 40px;	
+	
+	margin: 100px; /*(Top, Right, Bottom, Left)*/
+	margin: 100px auto; /*(Top, Bottom), (Right, Left)*/
+	margin: 100px auto 300px; /*Top, (Right, Left), Bottom*/
+	margin: 100px auto 300px auto; /*Top, Right, Bottom, Left*/			
+}
+</style>
+<script>
+// box를 클릭하면 0.2초마다 margin-top이 10씩 줄어듦(위로 올라감)
+window.onload = function() {
+	elDiv = document.getElementById("myBox");
+		
+	elDiv.onclick = function() {
+		marginTop = parseInt(this.style.marginTop);
+		
+		intervalId = setInterval(function() {
+			if (marginTop <= -80) {
+				clearInterval(intervalId);
+				return;
+			}
+			marginTop -= 10;
+			elDiv.style.marginTop = marginTop + "px";		
+			console.log(marginTop);
+		}, 20);
+	}
+}
+
+// window.onload
+</script>
+</head>
+
+<body>
+	<div id="myBox" class="box1" style="margin-top: 100px" >
+		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+	</div>
+</body>
+</html>
