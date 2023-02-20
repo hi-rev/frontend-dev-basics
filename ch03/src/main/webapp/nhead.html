@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>네이버 검색창 만들기</title>
 <style>
 * { margin: 0; padding: 0; }
 body {
@@ -12,11 +12,10 @@ body {
 }
 
 .header {
-	width: 630px;
+	width: 800px;
 	height: 100px;
 	margin: 50px auto;
 	
-	background-color: #ddd;
 }
 
 .header .logo, .header .search-box {
@@ -28,11 +27,63 @@ body {
 	height: 52px;
 	font-size: 0;
 	overflow: hidden;
-	background: url('/ch03/images/n-sprite.png') no-repeat 0 -158px / 442px 428px;
+	background: url('/ch03/images/n-splite.png') no-repeat 0 -158px / 442px 428px;
 }
 
-.search-box a, .search-box a input, search-box .btn-search button {
+.header #keyboard {
+	width: 20px;
+	height: 12px;
+	font-size: 0;
+	overflow: hidden;
+	margin-right: 5px;
+	background: url('/ch03/images/n-splite.png') no-repeat -398px -267px / 442px 428px;
+}
+
+.header #dropdown {
+	width: 10px;
+	height: 5px;
+	margin-right: 10px;
+	margin-bottom: 3px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/n-splite.png') no-repeat -158px -151px / 442px 428px;
+}
+
+.header #btn {
+	width: 22px;
+	height: 22px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/n-splite.png') no-repeat -420px -24px / 442px 428px;
+	border-width: 0;
 	display: block;
+  	margin: 0 auto;
+}
+
+.search-box a, 
+.search-box a input,
+.search-box .btn-search {
+    display: inline-block;
+}
+
+.search-box {
+	border: 3px solid #19CE60;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.btn-search { 
+	display: block;
+	background-color: #19CE60;
+  	padding: 10px;
+  	padding-top: 20px;
+}
+
+.search-box input[type="text"] {
+    width: 400px;
+    height: 30px;
+    border: none;
+    padding: 10px;
 }
 
 </style>
@@ -42,12 +93,12 @@ body {
 		<h1 class="logo">네이버</h1>
 		
 		<div class="search-box">
-			<div class="btn-search">
-				<button>검색</button>
-			</div>
-			<a href="#">드롭다운</a>
-			<a href="#">키보드</a>
 			<input type="text" />
+			<a id="keyboard" href="#">키보드</a>
+			<a id="dropdown" href="#">드롭다운</a>
+			<div class="btn-search">
+				<button id="btn">검색</button>
+			</div> 
 		</div>
 	</div>
 </body>
