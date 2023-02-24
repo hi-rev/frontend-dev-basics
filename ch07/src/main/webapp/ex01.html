@@ -15,13 +15,18 @@
 // 버전 확인
 console.log(jQuery().jquery, $().jquery);
 
+// 'load'는 HTML의 모든 요소들이 로딩된 후에 실행된다.
 window.addEventListener('load', function() {
 	setTimeout(function() {
 		// jQuery Object
+		// 일반적으로 jQuery 선택자는 '$()' 또는 'jQuery()' 함수로 시작한다.
+		// $는 jQuery 객체임을 나타내기 위해 사용된다. 
 		var $obj = jQuery('h1');
+		
+		// h1 태그의 color 속성을 red로 변경
 		$obj.css('color', 'red');
 		
-		console.log(typeof(jQuery), typeof($obj), "length: " + $obj.length, $obj instanceof Array, $obj instanceof Object);		
+		console.log(typeof(jQuery), typeof($obj), "length: " + $obj.length, $obj instanceof Array, $obj instanceof Object);
 	}, 1000);
 });
 
