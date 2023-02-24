@@ -5,15 +5,22 @@
 <title>리스트를 이용한 메뉴 만들기</title>
 <link rel="stylesheet" type="text/css" href="/ch05/css/tabbox.css"><link>
 <script>
+var liSelected = null;
+
+var onTabClicked = function() {
+	var liSelected = document.querySelector('li.selected');
+	liSelected && (liSelected.className = '');
+	
+	this.className = 'selected';
+}
+
 window.addEventListener('load', function() {
 	var divTabBox = document.getElementsByClassName('tab-box')[0];
 	var ul = divTabBox.childNodes[1];
 	var lis = ul.getElementsByTagName('li');
 	
 	Array.prototype.forEach.call(lis, function(li) {
-		li.addEventListener('click', function() {
-			console.log('click');
-		})
+		li.addEventListener('click', onTabClicked);
 	});
 });
 </script>
