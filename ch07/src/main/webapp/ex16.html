@@ -2,10 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.3.js"></script>
 <script>
 $(function(){
 	setTimeout(function(){
+		$('li:contains("샘플")').css('color', 'red');
+		// <strong> 자식을 가진 li 값 선택
+		$('li:has("strong")').css('color', 'blue');
 	}, 1000);
 });
 </script>

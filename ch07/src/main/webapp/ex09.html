@@ -2,10 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.3.js"></script>
 <script>
 $(function(){
 	setTimeout(function(){
+		// 자식 선택자
+		$("li > strong").css("font-weight", "normal");
+		$("li > div > strong").css("color", "blue");		
 	}, 1000);
 });
 </script>
