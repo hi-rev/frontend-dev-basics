@@ -1,13 +1,12 @@
 imageViewer = {
 	init: function() {
-		for (var i = 0; i < 100; i++) {
-			this._changeImage();
-		}
+		var index = this._changeImage();
+		return this._images[index];
 	},
 	_changeImage: function() {
 		var index = Math.floor(Math.random()*this._images.length); // 랜덤 _images 배열 인덱스값
-		// 이전 값과 같은 값이 나온다면, 다른 값으로 변경
-		console.log(index);
+		// console.log(index);
+		return index;
 	},
 	_images: [{
 		name: '국화', 
