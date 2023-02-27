@@ -7,33 +7,7 @@
 <script type="text/javascript" src="./jquery/jquery-3.6.3.js"></script>
 <script type="text/javascript" src="image-viewer.js"></script>
 <script>
-$(function() {
-	var checked = true;
-	var interval;
-	
-	$('#btn-change').click(function() {
-		var imageData = imageViewer.init();
-		$("img").attr("src", "images/" + imageData.file)
-					  .attr("title", imageData.name);
-	});
-	
-	$('#btn-slideshow').click(function() {
-		if (checked) {
-			$("#btn-slideshow").text("슬라이드쇼 중지");
-			checked = false;
-			interval = setInterval(function() {
-				var imageData = imageViewer.init();
-				
-				$("img").attr("src", "images/" + imageData.file)
-							  .attr("title", imageData.name);
-			}, 1000);
-		} else {
-			$("#btn-slideshow").text("슬라이드쇼 시작");
-			checked = true;
-			clearInterval(interval);
-		}
-	});
-});
+
 </script>
 </head>
 <body>
