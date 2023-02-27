@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.3.js"></script>
 <script>
 $(function(){
 	setTimeout(function(){
-		
+		$(".d1").wrap("<h2>");
+		$(".d2").wrap("<h3>").css("padding-left", "50px");
 	}, 1000);
 });
 </script>

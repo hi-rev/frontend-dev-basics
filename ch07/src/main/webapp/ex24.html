@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.3.js"></script>
 <script>
 $(function(){
 	setTimeout(function(){
+		// p2의 strong을 p1 앞에 붙임
+		$("#p2 strong").prependTo("#p1");
 	}, 1000);
 });
 </script>
