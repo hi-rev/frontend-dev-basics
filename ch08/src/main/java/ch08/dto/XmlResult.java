@@ -8,20 +8,36 @@ public class XmlResult {
 	private GuestBookVo data;	/* if success, set */
 	private String message;		/* if fail, set */
 	
+	public XmlResult() {
+		
+	}
+	
 	private XmlResult(GuestBookVo data) {
 		this.result = "success";
 		this.data = data;
 	}
-	
+
 	private XmlResult(String message) {
 		this.result = "fail";
+		this.message = message;
+	}
+	
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public void setData(GuestBookVo data) {
+		this.data = data;
+	}
+
+	public void setMessage(String message) {
 		this.message = message;
 	}
 	
 	public String getResult() {
 		return result;
 	}
-	public Object getData() {
+	public GuestBookVo getData() {
 		return data;
 	}
 	public String getMessage() {

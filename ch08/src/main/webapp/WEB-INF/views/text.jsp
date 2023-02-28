@@ -12,7 +12,7 @@
 <script>
 $(function() {
 	$("button").click(function() {
-		$("#data").load("/${pageContext.request.contextPath }/api/text");
+		$("#data").load("${pageContext.request.contextPath }/api/text");
 	});
 });
 </script>
