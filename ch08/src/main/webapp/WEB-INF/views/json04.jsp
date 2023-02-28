@@ -18,12 +18,12 @@ $(function(){
 	
 	$("button").click(function(){
 		$.ajax({
-			url: "${pageContext.request.contextPath}/api/post01",
+			url: "${pageContext.request.contextPath}/api/post02",
 			async: true,
 			type: "post",
 			dataType: "json", // 받는 content type
-			contentType: "application/x-www-form-urlencoded", // 보내는 content type,
-			data: $.param(vo), 
+			contentType: "application/json", // 보내는 content type,
+			data: JSON.stringify(vo), 
 			success: function(response) {
 				if(response.result === "fail") {
 					console.error(response.message);
