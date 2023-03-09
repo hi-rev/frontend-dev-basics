@@ -14,13 +14,18 @@ const myAsyncFn02 = function(param) {
     })
 }
 
-// test01: success
-myAsyncFn02("data")
-    .then(function(result) {
-        console.log(result);
-    })
-    .catch(function(error) {
-        console.error(error);
-    });
+// module.main == module: 단독으로 실행할 때만 실행됨
+if (require.main == module) {
+    // test01: success
+    myAsyncFn02("data")
+        .then(function(result) {
+            console.log(result);
+        })
+        .catch(function(error) {
+            console.error(error);
+        });
 
-console.log("wait.....");
+    console.log("wait.....");
+}
+
+module.exports = myAsyncFn02;
